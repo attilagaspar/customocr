@@ -23,7 +23,7 @@ def convert_coco_to_flat_json(coco_path, out_path):
         file_name = id_to_file.get(ann["image_id"])
         text = clean_label(ann.get("text", ""))
         if file_name is not None:
-            text += EOS_TOKEN  # append EOS
+            #text += EOS_TOKEN  # append EOS
             out.append({"file_name": file_name, "text": text})
 
     with open(out_path, "w", encoding="utf-8") as f:
